@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import BackgroundSection from "../components/Globals/BackgroundSection"
 import Info from "../components/Home/info"
+import Menu from "../components/Home/Menu"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -14,6 +15,7 @@ const IndexPage = ({ data }) => (
       styleClass="default-background"
     ></BackgroundSection>
     <Info></Info>
+    <Menu items={data.menu}></Menu>
   </Layout>
 )
 
@@ -23,6 +25,24 @@ export const query = graphql`
       childImageSharp {
         fluid(sizes: "") {
           ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    menu: allContentfulCoffeeItem {
+      edges {
+        node {
+          id
+          title
+          price
+          description {
+            description
+          }
+          category
+          image {
+            fixed(width: 50, height: 50) {
+              ...GatsbyContentfulFixed
+            }
+          }
         }
       }
     }
