@@ -5,6 +5,7 @@ import { graphql } from "gatsby"
 import BackgroundSection from "../components/Globals/BackgroundSection"
 import Info from "../components/Home/info"
 import Menu from "../components/Home/Menu"
+import Products from "../components/Home/Products"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -16,6 +17,7 @@ const IndexPage = ({ data }) => (
     ></BackgroundSection>
     <Info></Info>
     <Menu items={data.menu}></Menu>
+    <Products></Products>
   </Layout>
 )
 
@@ -33,10 +35,10 @@ export const query = graphql`
         node {
           id
           title
-          price
           description {
             description
           }
+          price
           category
           image {
             fixed(width: 50, height: 50) {
