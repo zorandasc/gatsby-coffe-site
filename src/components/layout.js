@@ -13,17 +13,12 @@ import "./bootstrap.min.css"
 import "./layout.css"
 import Navbar from "../components/Globals/Navbar"
 import Footer from "../components/Globals/Footer"
+import Fb from "../components/fb"
+import ReactDOM from "react-dom"
 
 const Layout = ({ children }) => {
   useEffect(() => {
-    const div1 = document.createElement("div")
-    div1.id = "fb-root"
-    document.body.appendChild(div1)
-
-    const div2 = document.createElement("div")
-    div2.className = "fb-customerchat"
-    div2.setAttribute("page_id", "119106702808633")
-    document.body.appendChild(div2)
+    ReactDOM.createPortal(<Fb />, document.body)
   })
   return (
     <>
