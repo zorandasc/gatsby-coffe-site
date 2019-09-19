@@ -14,22 +14,21 @@ import "./layout.css"
 import Navbar from "../components/Globals/Navbar"
 import Footer from "../components/Globals/Footer"
 import Fb from "../components/fb"
-import ReactDOM from "react-dom"
 
 const Layout = ({ children }) => {
-  useEffect(() => {
-    const container = document.createElement("div")
-    document.body.appendChild(container)
-    ReactDOM.createPortal(<Fb />, container)
-    return () => {
-      document.body.removeChild(container)
-    }
-  })
+  useEffect(() => {})
   return (
     <>
       <Navbar></Navbar>
       {children}
       <Footer></Footer>
+      <div id="fb-root"></div>
+      <React.Fragment
+        dangerouslySetInnerHTML={{
+          __html: `
+          <div className="fb-customerchat" page_id="119106702808633"></div>`,
+        }}
+      ></React.Fragment>
     </>
   )
 }
