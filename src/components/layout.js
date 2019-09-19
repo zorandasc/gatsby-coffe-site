@@ -20,11 +20,11 @@ const Layout = ({ children }) => {
       <Navbar></Navbar>
       {children}
       <Footer></Footer>
-      <div id="fb-root"></div>
+
       <div
         dangerouslySetInnerHTML={{
           __html: `
-          <div className="fb-customerchat" page_id="119106702808633"></div>`,
+         <div id="fb-root"></div> <div className="fb-customerchat" page_id="119106702808633"></div>`,
         }}
       ></div>
     </>
