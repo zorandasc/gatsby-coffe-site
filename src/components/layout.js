@@ -18,7 +18,8 @@ import ReactDOM from "react-dom"
 
 const Layout = ({ children }) => {
   useEffect(() => {
-    ReactDOM.createPortal(<Fb />, document.body)
+    const container = document.createElement("div")
+    ReactDOM.createPortal(<Fb />, container)
   })
   return (
     <>
