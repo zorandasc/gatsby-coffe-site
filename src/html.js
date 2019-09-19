@@ -28,7 +28,7 @@ export default function HTML(props) {
         <div
           className="fb-customerchat"
           page_id="119106702808633"
-          theme_color="#DC143C"
+          theme_color="#D2691E"
           logged_in_greeting="Pozdrav! Pošaljite nam poruku."
           logged_out_greeting="Pozdrav! Pošaljite nam poruku."
         ></div>
