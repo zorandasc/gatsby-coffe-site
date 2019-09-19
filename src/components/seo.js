@@ -70,7 +70,6 @@ function SEO({ description, lang, meta, title }) {
       ].concat(meta)}
     >
       <script>
-        {" "}
         {`window.fbAsyncInit = function() {
           FB.init({
             xfbml            : true,
