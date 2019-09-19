@@ -19,7 +19,11 @@ import ReactDOM from "react-dom"
 const Layout = ({ children }) => {
   useEffect(() => {
     const container = document.createElement("div")
+    document.body.appendChild(container)
     ReactDOM.createPortal(<Fb />, container)
+    return () => {
+      document.body.removeChild(container)
+    }
   })
   return (
     <>
