@@ -13,16 +13,15 @@ import "./bootstrap.min.css"
 import "./layout.css"
 import Navbar from "../components/Globals/Navbar"
 import Footer from "../components/Globals/Footer"
-import Fb from "../components/fb"
 
 const Layout = ({ children }) => {
-  useEffect(() => {})
   return (
     <>
       <Navbar></Navbar>
       {children}
       <Footer></Footer>
       <div id="fb-root"></div>
+      <div className="fb-customerchat" page_id="119106702808633"></div>
       <React.Fragment
         dangerouslySetInnerHTML={{
           __html: `
