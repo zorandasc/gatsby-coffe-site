@@ -8,20 +8,25 @@ import Menu from "../components/Home/Menu"
 import Products from "../components/Home/Products"
 import Contact from "../components/Home/Contact"
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <SEO title="Home" />
-    <BackgroundSection
-      img={data.img.childImageSharp.fluid}
-      title="regular joe's"
-      styleClass="default-background"
-    ></BackgroundSection>
-    <Info></Info>
-    <Menu items={data.menu}></Menu>
-    <Products></Products>
-    <Contact></Contact>
-  </Layout>
-)
+import { useIntl } from "gatsby-plugin-intl"
+
+const IndexPage = ({ data }) => {
+  const intl = useIntl()
+  return (
+    <Layout>
+      <SEO title={intl.formatMessage({ id: "home" })} />
+      <BackgroundSection
+        img={data.img.childImageSharp.fluid}
+        title={intl.formatMessage({ id: "regular" })}
+        styleClass="default-background"
+      ></BackgroundSection>
+      <Info></Info>
+      <Menu items={data.menu}></Menu>
+      <Products></Products>
+      <Contact></Contact>
+    </Layout>
+  )
+}
 
 export const query = graphql`
   {
