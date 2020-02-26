@@ -3,9 +3,11 @@ import Title from "../Globals/Title"
 import Img from "gatsby-image"
 
 function getCategories(items) {
+  console.log("items", items)
   let tempItems = items.map(items => {
-    return items.node.catagory
+    return items.node.category
   })
+  console.log("tempItems", tempItems)
   let tempCategories = new Set(tempItems)
   let categories = Array.from(tempCategories)
   categories = ["all", ...categories]
@@ -30,6 +32,7 @@ const Menu1 = props => {
   }
 
   if (items.length > 0) {
+    console.log("categories", categories)
     return (
       <section className="menu py-5">
         <div className="container">
