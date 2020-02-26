@@ -1,10 +1,9 @@
 import React, { useState } from "react"
 import logo from "../../images/logo.svg"
-import { Link } from "gatsby"
 import { FaCartArrowDown } from "react-icons/fa"
 import Language from "../language"
 import links from "../constants/links"
-import { useIntl } from "gatsby-plugin-intl"
+import { useIntl, Link } from "gatsby-plugin-intl"
 
 const Navbar1 = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)

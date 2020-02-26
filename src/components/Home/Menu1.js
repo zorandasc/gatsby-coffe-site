@@ -1,13 +1,13 @@
 import React, { useState } from "react"
 import Title from "../Globals/Title"
 import Img from "gatsby-image"
+import { useIntl } from "gatsby-plugin-intl"
 
 function getCategories(items) {
-  console.log("items", items)
   let tempItems = items.map(items => {
     return items.node.category
   })
-  console.log("tempItems", tempItems)
+
   let tempCategories = new Set(tempItems)
   let categories = Array.from(tempCategories)
   categories = ["all", ...categories]
@@ -15,11 +15,11 @@ function getCategories(items) {
 }
 
 const Menu1 = props => {
-  const [items, setItems] = useState(props.items.edges)
+  const [items] = useState(props.items.edges)
   const [coffeeItems, setCoffeeItems] = useState(props.items.edges)
-  const [categories, setCategories] = useState(() =>
-    getCategories(props.items.edges)
-  )
+  const [categories] = useState(() => getCategories(props.items.edges))
+
+  const intl = useIntl()
 
   const handleItems = category => {
     let allItems = [...items]
@@ -32,11 +32,10 @@ const Menu1 = props => {
   }
 
   if (items.length > 0) {
-    console.log("categories", categories)
     return (
       <section className="menu py-5">
         <div className="container">
-          <Title title="best of our menu"></Title>
+          <Title title={intl.formatMessage({ id: "best" })}></Title>
           <div className="row mb-5">
             <div className="col-10 mx-auto text-center">
               {categories.map((category, index) => {
