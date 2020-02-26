@@ -1,6 +1,6 @@
 {
-  "home": "pocetna",
-  "about": "o name",
+  "home": "Pocetna",
+  "about": "O name",
   "regular": "regularni jo",
   "titlestory": "nasa prica",
   "story": "oduvjek je cinjenica da ce citatelji bit uznemireni sadrzajem gledajuci u duzajn stranice. Cilj  koristena  Lorem Ipsum je da vise-manje posjeduje normalnu  raspodijelu slova.",
@@ -9,5 +9,8 @@
   "all": "sve",
   "product": "nasi produkti",
   "cart": "dodaj u korpu",
-  "contact": "kontaktirajte nas"
+  "contact": "kontaktirajte nas",
+  "name": "ime",
+  "description": "opis",
+  "submit": "posalji"
 }

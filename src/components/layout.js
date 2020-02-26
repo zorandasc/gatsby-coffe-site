@@ -11,13 +11,14 @@ import PropTypes from "prop-types"
 
 import "./bootstrap.min.css"
 import "./layout.css"
-import Navbar from "../components/Globals/Navbar"
+
+import Navbar1 from "../components/Globals/Navbar1"
 import Footer from "../components/Globals/Footer"
 
 const Layout = ({ children }) => {
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar1></Navbar1>
       {children}
       <Footer></Footer>
     </>

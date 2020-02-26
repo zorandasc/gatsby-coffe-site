@@ -15,7 +15,7 @@ const language = () => {
             key={language}
             onClick={() => changeLocale(language)}
             style={{
-              color: currentLocale === language ? `green` : `red`,
+              color: currentLocale === language ? `green` : `grey`,
               margin: 10,
               cursor: `pointer`,
             }}

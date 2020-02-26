@@ -5,6 +5,7 @@ import { graphql } from "gatsby"
 import BackgroundSection from "../components/Globals/BackgroundSection"
 import Info from "../components/Home/info"
 import Menu from "../components/Home/Menu"
+import Menu1 from "../components/Home/Menu1"
 import Products from "../components/Home/Products"
 import Contact from "../components/Home/Contact"
 
@@ -21,7 +22,7 @@ const IndexPage = ({ data }) => {
         styleClass="default-background"
       ></BackgroundSection>
       <Info></Info>
-      <Menu items={data.menu}></Menu>
+      <Menu1 items={data.menu}></Menu1>
       <Products></Products>
       <Contact></Contact>
     </Layout>

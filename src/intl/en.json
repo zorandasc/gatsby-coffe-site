@@ -9,5 +9,8 @@
   "all": "all",
   "product": "our product",
   "cart": "add to cart",
-  "contact": "contact us"
+  "contact": "contact us",
+  "name": "name",
+  "description": "description",
+  "submit": "submit"
 }

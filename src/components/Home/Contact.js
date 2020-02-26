@@ -1,15 +1,17 @@
 import React from "react"
 import Title from "../Globals/Title"
+import { useIntl } from "gatsby-plugin-intl"
 
 const Contact = () => {
+  const intl = useIntl()
   return (
     <section className="contact py-5">
-      <Title title="Contact us"></Title>
+      <Title title={intl.formatMessage({ id: "contact" })}></Title>
       <div className="row">
         <div className="col-10 col-sm-8 col-md-6 mx-auto">
           <form action="https://formspree.io/zoran.dasic@mtel.ba" method="POST">
             <div>
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">{intl.formatMessage({ id: "name" })}</label>
               <input
                 type="text"
                 name="name"
@@ -29,7 +31,9 @@ const Contact = () => {
               ></input>
             </div>
             <div>
-              <label htmlFor="description">Description</label>
+              <label htmlFor="description">
+                {intl.formatMessage({ id: "description" })}
+              </label>
               <textarea
                 name="descriptione"
                 id="description"
@@ -42,7 +46,7 @@ const Contact = () => {
               type="submit"
               className="btn btn-yellow btn-block text-capitalize mt-5"
             >
-              submit
+              {intl.formatMessage({ id: "submit" })}
             </button>
           </form>
         </div>

@@ -1,7 +1,9 @@
 import React from "react"
 import Img from "gatsby-image"
+import { useIntl } from "gatsby-plugin-intl"
 
 const Product = ({ product }) => {
+  const intl = useIntl()
   return (
     <div className="col-10 col-sm-8 col-md-6 col-lg-4 my-3 mx-auto">
       <div className="card" style={{ minHeight: "100%" }}>
@@ -18,7 +20,7 @@ const Product = ({ product }) => {
             data-item-url="https://heuristic-perlman-cf8eb1.netlify.com/"
             data-item-description="Some fresh bacon"
           >
-            add to cart
+            {intl.formatMessage({ id: "cart" })}
           </button>
         </div>
       </div>
