@@ -2,22 +2,22 @@ import React, { useState } from "react"
 import Title from "../Globals/Title"
 import Img from "gatsby-image"
 
+function getCategories(items) {
+  let tempItems = items.map(items => {
+    return items.node.catagory
+  })
+  let tempCategories = new Set(tempItems)
+  let categories = Array.from(tempCategories)
+  categories = ["all", ...categories]
+  return categories
+}
+
 const Menu1 = props => {
   const [items, setItems] = useState(props.items.edges)
   const [coffeeItems, setCoffeeItems] = useState(props.items.edges)
   const [categories, setCategories] = useState(() =>
     getCategories(props.items.edges)
   )
-
-  const getCategories = items => {
-    let tempItems = items.map(items => {
-      return items.node.catagory
-    })
-    let tempCategories = new Set(tempItems)
-    let categories = Array.from(tempCategories)
-    categories = ["all", ...categories]
-    return categories
-  }
 
   const handleItems = category => {
     let allItems = [...items]
