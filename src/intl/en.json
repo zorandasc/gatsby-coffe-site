@@ -12,5 +12,7 @@
   "contact": "contact us",
   "name": "name",
   "description": "description",
-  "submit": "submit"
+  "submit": "submit",
+  "detail": "details",
+  "back": "back"
 }

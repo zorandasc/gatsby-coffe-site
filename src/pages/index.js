@@ -12,6 +12,8 @@ import { useIntl } from "gatsby-plugin-intl"
 
 const IndexPage = ({ data }) => {
   const intl = useIntl()
+  console.log(data)
+
   return (
     <Layout>
       <SEO title={intl.formatMessage({ id: "home" })} />
@@ -29,19 +31,21 @@ const IndexPage = ({ data }) => {
 }
 
 export const query = graphql`
-  {
+  query($locale: String!) {
     img: file(relativePath: { eq: "default-background.jpeg" }) {
       childImageSharp {
-        fluid(sizes: "") {
+        fluid {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
-    menu: allContentfulCoffeeItem {
+    menu: allContentfulCoffeeItem(filter: { node_locale: { regex: $locale } }) {
       edges {
         node {
           id
           title
+          slug
+          node_locale
           description {
             description
           }

@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import Title from "../Globals/Title"
 import Img from "gatsby-image"
 import { useIntl } from "gatsby-plugin-intl"
+import { Link } from "gatsby"
 
 function getCategories(items) {
   let tempItems = items.map(items => {
@@ -75,6 +76,9 @@ const Menu1 = props => {
                     <p className="text-muted">
                       <small>{node.description.description}</small>
                     </p>
+                    <Link to={`/items/${node.slug}`}>
+                      {intl.formatMessage({ id: "detail" })}
+                    </Link>
                   </div>
                 </div>
               )
