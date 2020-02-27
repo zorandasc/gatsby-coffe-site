@@ -10,12 +10,15 @@ const path = require("path")
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
   deletePage(page)
-  console.log("page.context.intl.language,", page.context.intl.language)
+  console.log(
+    "page.context.intl.language,",
+    "/".concat(page.context.intl.language).concat("/")
+  )
   createPage({
     ...page,
     context: {
       ...page.context,
-      locale: page.context.intl.language,
+      locale: "/".concat(page.context.intl.language).concat("/"),
     },
   })
 }
