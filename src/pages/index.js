@@ -12,7 +12,6 @@ import { useIntl } from "gatsby-plugin-intl"
 
 const IndexPage = ({ data }) => {
   const intl = useIntl()
-  console.log(data)
 
   return (
     <Layout>
@@ -24,7 +23,7 @@ const IndexPage = ({ data }) => {
       ></BackgroundSection>
       <Info></Info>
       <Menu1 items={data.menu}></Menu1>
-      <Products></Products>
+      <Products products={data.products}></Products>
       <Contact></Contact>
     </Layout>
   )
@@ -54,6 +53,23 @@ export const query = graphql`
           image {
             fixed(width: 50, height: 50) {
               ...GatsbyContentfulFixed
+            }
+          }
+        }
+      }
+    }
+    products: allContentfulCoffeeProduct(
+      filter: { node_locale: { regex: $locale } }
+    ) {
+      edges {
+        node {
+          id
+          title
+          price
+          image {
+            fluid(maxHeight: 426) {
+              src
+              ...GatsbyContentfulFluid
             }
           }
         }
