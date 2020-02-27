@@ -1,8 +1,7 @@
 import React, { useState } from "react"
 import Title from "../Globals/Title"
 import Img from "gatsby-image"
-import { useIntl } from "gatsby-plugin-intl"
-import { Link } from "gatsby"
+import { useIntl, Link } from "gatsby-plugin-intl"
 
 function getCategories(items) {
   let tempItems = items.map(items => {
