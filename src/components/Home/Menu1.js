@@ -75,7 +75,7 @@ const Menu1 = props => {
                     <p className="text-muted">
                       <small>{node.description.description}</small>
                     </p>
-                    <Link to={`/items/${node.slug}`}>
+                    <Link to={`/${node.slug}`}>
                       {intl.formatMessage({ id: "detail" })}
                     </Link>
                   </div>
