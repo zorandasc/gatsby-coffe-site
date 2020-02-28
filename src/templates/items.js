@@ -5,11 +5,8 @@ import Img from "gatsby-image"
 import { useIntl, Link } from "gatsby-plugin-intl"
 
 export const query = graphql`
-  query($slug: String!, $locale: String!) {
-    item: contentfulCoffeeItem(
-      slug: { eq: $slug }
-      node_locale: { regex: $locale }
-    ) {
+  query($slug: String!) {
+    item: contentfulCoffeeItem(slug: { eq: $slug }) {
       description {
         description
       }
